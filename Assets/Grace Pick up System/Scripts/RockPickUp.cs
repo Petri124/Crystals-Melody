@@ -2,13 +2,20 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 
+
 public class RockPickUp : MonoBehaviour
 {
+
+    //for the pop up to click E
+    public GameObject pickupUI;
+
+    private bool playerInRange = false;
 
     //GameObject.tag = "Rock";
 
@@ -21,7 +28,8 @@ public class RockPickUp : MonoBehaviour
 
         //check tag = rocks
         
-        /*
+       /* 
+
         if (collition.gameObject.CompareTag("Rock"))
         {
             Debug.Log("Rock can be picked up!");
@@ -30,10 +38,14 @@ public class RockPickUp : MonoBehaviour
         */
 
 
+
         if (collition.tag == "Player")
         {
-            Debug.Log("Rock can be picked up!");
+            Debug.Log("******* Rock can be picked up!");
 
+            playerInRange = true;
+            //show UI
+            pickupUI.SetActive(true);
 
 
 
@@ -53,6 +65,17 @@ public class RockPickUp : MonoBehaviour
 
     private void OnTriggerExit(Collider collition)
     {
+
+        if (collition.tag == "Player")
+        {
+            playerInRange = false;
+            plickupUI.SetActive(false);
+        }
+
+
+
+
+
         /*
 
         //void on trigger exit  *******
@@ -86,6 +109,16 @@ public class RockPickUp : MonoBehaviour
     {
         //set to true when 
         //myButton.gameObject.SetActive(false);
+
+
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("******** Rock is picked up");
+
+            //just dissable rock for now
+            gameObject.SetActive(false);
+        }
+
 
     }
     //  make ui popup
