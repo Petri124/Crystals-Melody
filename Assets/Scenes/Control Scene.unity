@@ -132,7 +132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 513826061}
   - component: {fileID: 513826060}
-  - component: {fileID: 513826062}
   - component: {fileID: 513826059}
   - component: {fileID: 513826058}
   - component: {fileID: 513826063}
@@ -162,7 +161,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.06
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &513826059
 MeshRenderer:
@@ -229,18 +228,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &513826062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513826057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb34ea97c8ab40e48a0484c6e07d2d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &513826063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34ea97c8ab40e48a0484c6e07d2d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupUI: {fileID: 1777764800}
 --- !u!1 &590941037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1114,6 @@ GameObject:
   - component: {fileID: 1384892858}
   - component: {fileID: 1384892857}
   - component: {fileID: 1384892856}
-  - component: {fileID: 1384892861}
   - component: {fileID: 1384892855}
   m_Layer: 0
   m_Name: Character
@@ -1188,7 +1175,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1255,24 +1242,12 @@ Transform:
   m_GameObject: {fileID: 1384892854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.85, y: 3.49, z: 5.61}
+  m_LocalPosition: {x: 1.85, y: 3.49, z: -1.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1384892861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384892854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb34ea97c8ab40e48a0484c6e07d2d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1491505398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34ea97c8ab40e48a0484c6e07d2d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupUI: {fileID: 0}
 --- !u!114 &1777764803
 MonoBehaviour:
   m_ObjectHideFlags: 0

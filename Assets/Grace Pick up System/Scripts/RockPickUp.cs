@@ -46,6 +46,7 @@ public class RockPickUp : MonoBehaviour
             playerInRange = true;
             //show UI
             pickupUI.SetActive(true);
+            
 
 
 
@@ -69,7 +70,11 @@ public class RockPickUp : MonoBehaviour
         if (collition.tag == "Player")
         {
             playerInRange = false;
-            plickupUI.SetActive(false);
+            pickupUI.SetActive(false);
+            Debug.Log("you are out of range ========");
+
+
+            //pickupUI.GetComponent<Renderer>().enable = false;
         }
 
 
