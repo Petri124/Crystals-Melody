@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ using UnityEngine.UI;
 
 public class RockPickUp : MonoBehaviour
 {
-
+    private GameController gameController;
     //for the pop up to click E
     public GameObject pickupUI;
 
@@ -23,6 +24,8 @@ public class RockPickUp : MonoBehaviour
     void Start()
     {
         pickupUI.SetActive(false);
+
+        gameController = GetComponentInParent<GameController>();
     }
 
     // void on trigger enter
@@ -127,18 +130,48 @@ public class RockPickUp : MonoBehaviour
             pickupUI.SetActive(false);
             //just dissable rock for now
             gameObject.SetActive(false);
+
+
+
+            gameController.rocksCollected += 1;
+
+            Debug.Log("-----------   Added a rock : " + gameController.rocksCollected);
+
+
+
+
+            /* was tyring to 
+            if ((KeyCode.E)) == true) 
+            {
+
+                if (gemCollect == 1)
+                {
+                    gemHas[0] = true;
+                }
+                else if (gemCollect == 2)
+                {
+                    gemHas[1] = true;
+                }
+                else if (gemCollect == 3)
+                {
+                    gemHas[2] = true;
+                }
+                else if (gemCollect == 3)
+                {
+                    gemHas[3] = true;
+                }
+                else
+                {
+                    Break;
+                }
+            }
+            */
+
+
         }
 
 
     }
-    //  make ui popup
-
-
-
-
-    //input (E) 
-
-
 
 
 }
