@@ -16,6 +16,7 @@ public class dragdrop : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();//set rigidbody
+        startpos= transform.position;
     }
     void OnMouseDrag()//drag object
     {
