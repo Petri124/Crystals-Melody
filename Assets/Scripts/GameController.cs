@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+using UnityEngine.UI;
+
+
+public class GameController : MonoBehaviour
+{
+
+    public int rocksCollected;
+
+    public Button backpackButton;
+
+    public bool melodyCorrect = false;
+
+    void Start()
+    {
+        backpackButton.GetComponent<StatusChange>().Hide();
+
+
+    }
+
+    void Update()
+    {
+        if (rocksCollected >= 4)
+        {
+            backpackButton.GetComponent<StatusChange>().Show();
+        }
+
+        if (melodyCorrect == true)
+        {
+            gameObject.GetComponent<SceneChanger>().LoadGameEnd();
+        }
+
+    }
+}
