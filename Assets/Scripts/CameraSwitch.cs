@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
-
+    /*
     public string[] TriggerKey = { "CamSwitch1", "CamSwitch2" };
     public bool[] boolTrigger = { true, true };
     //First method Camera Storage: Used
@@ -15,13 +15,30 @@ public class CameraSwitch : MonoBehaviour
     public Camera[] CamValTrue = {};
     public Camera[] CamValFalse = {};
     public Camera currentCamera;
-
+    */
+    //third method Camera Storage: Best
+    public Camera CamValOff;
+    public Camera CamValOn;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    private void OnTriggerEnter(Collider other) //when something collides with the collider,
+    {
+        //Check if collision is player
+        if (other.tag == "Player")
+        {
+            CamValOff.tag = "camOFF"; //make sure the Camera thats turned off is considered off
+            CamValOff.enabled = false; //disable camera
+            CamValOn.enabled = true; //enable camera
+            CamValOn.tag = "MainCamera"; //set this camera to be the main camera, 
+        }
+    }
+
+    /*
+    //This is part of the old method, ignore this existence
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player"); //Check if collision is player
@@ -37,23 +54,10 @@ public class CameraSwitch : MonoBehaviour
                 currentCamera = CamVal2[i];
                 currentCamera.tag = "MainCamera"; //set the current camera to be looked for by the character controller
                 break;
-                /*
-                if (boolTrigger[i]) 
-                {
-                    CamValFalse[i].enabled = false;
-                    CamValTrue[i].enabled = true;
-                    boolTrigger[i] = false;
-                }
-                else
-                {
-                    CamValTrue[i].enabled = false;
-                    CamValFalse[i].enabled = true;
-                    boolTrigger[i] = true;
-                }
-                */
             }
         }
     }
+    */
 
     // Update is called once per frame
     void Update()
