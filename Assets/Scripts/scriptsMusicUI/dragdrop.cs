@@ -16,6 +16,7 @@ public class dragdrop : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();//set rigidbody
+        startpos= transform.position;
     }
     void OnMouseDrag()//drag object
     {
@@ -26,7 +27,8 @@ public class dragdrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider bar)//detect contact enter
     {
-        if(bar.CompareTag("songbar") == true)
+       // Debug.Log("contact");
+        if (bar.CompareTag("songbar") == true)
         {
             hit_obj = bar.gameObject;
             contact = true;
